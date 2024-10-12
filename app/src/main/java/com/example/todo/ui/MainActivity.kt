@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.example.todo.ui.theme.TodoTheme
 import com.example.todo.viewmodel.TodoViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-
+import com.example.todo.model.Todo
 
 
 class MainActivity : ComponentActivity() {
@@ -46,13 +46,13 @@ fun TodoScreen(todoViewModel: TodoViewModel = viewModel()) {
 }
 
 @Composable
-fun TodoList(todos: List<String>) {
+fun TodoList(todos: List<Todo>) {
     LazyColumn(
         modifier = Modifier.padding(8.dp)
     ) {
         items(todos) {todo ->
             Text(
-                text=todo,
+                text=todo.title,
                 modifier = Modifier.padding(top=4.dp,bottom=4.dp)
             )
             HorizontalDivider(color = Color.LightGray, thickness = 1.dp)
@@ -63,7 +63,7 @@ fun TodoList(todos: List<String>) {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Moi $name!",
         modifier = modifier
     )
 }
@@ -72,6 +72,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     TodoTheme {
-        Greeting("Android")
+        TodoScreen()
     }
 }

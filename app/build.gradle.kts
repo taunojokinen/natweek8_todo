@@ -63,6 +63,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:1.7.3")//2
     implementation("androidx.compose.material:material:1.7.3")//3
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")//4
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")//5
+    implementation("com.squareup.retrofit2:converter-gson:2.0.0")//6
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
